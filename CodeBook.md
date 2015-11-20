@@ -12,8 +12,9 @@ library(reshape)
 library(dplyr)
 ```
 
-# Run_analysis.R
-First step is to import each of the 8 tables that will be used to create the tidy data set.
+
+
+First step in the run_analysis.R fil is to import each of the 8 tables that will be used to create the tidy data set.
 ```sh
 x_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
 y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
@@ -75,3 +76,80 @@ Use cast function from reshape package to add mean of each variable to each uniq
 ```sh
 tidy <- cast(melted, subject + activity ~ variable, mean)
 ```
+
+The tidy data set includes 180 rows and 68 columns with one row for each of the 30 subjects for each of the 6 activities included(WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+The value for each of the remaining variables are the mean for that subject and activity.  Thes means are expressed in3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz captured from the embedded accelerometer and gyroscope of Samsung Galaxy S IIs.
+
+```sh
+ "subject"                  
+ "activity"                    
+ "tBodyAcc-mean()-X"           
+ "tBodyAcc-mean()-Y"           
+ "tBodyAcc-mean()-Z"           
+ "tGravityAcc-mean()-X"        
+ "tGravityAcc-mean()-Y"       
+ "tGravityAcc-mean()-Z"       
+ "tBodyAccJerk-mean()-X"       
+ "tBodyAccJerk-mean()-Y"       
+ "tBodyAccJerk-mean()-Z"      
+ "tBodyGyro-mean()-X"         
+ "tBodyGyro-mean()-Y"         
+ "tBodyGyro-mean()-Z"         
+ "tBodyGyroJerk-mean()-X"     
+ "tBodyGyroJerk-mean()-Y"      
+ "tBodyGyroJerk-mean()-Z"      
+ "tBodyAccMag-mean()"         
+ "tGravityAccMag-mean()"      
+ "tBodyAccJerkMag-mean()"     
+ "tBodyGyroMag-mean()"        
+ "tBodyGyroJerkMag-mean()"     
+ "fBodyAcc-mean()-X"           
+ "fBodyAcc-mean()-Y
+ "fBodyAcc-mean()-Z"         
+ "fBodyAccJerk-mean()-X"      
+ "fBodyAccJerk-mean()-Y"      
+ "fBodyAccJerk-mean()-Z"      
+ "fBodyGyro-mean()-X"          
+ "fBodyGyro-mean()-Y"         
+ "fBodyGyro-mean()-Z"         
+ "fBodyAccMag-mean()"          
+ "fBodyBodyAccJerkMag-mean()"  
+ "fBodyBodyGyroMag-mean()"     
+ "fBodyBodyGyroJerkMag-mean()"
+ "tBodyAcc-std()-X"            
+ "tBodyAcc-std()-Y"            
+ "tBodyAcc-std()-Z"            
+ "tGravityAcc-std()-X"         
+ "tGravityAcc-std()-Y"        
+ "tGravityAcc-std()-Z"         
+ "tBodyAccJerk-std()-X"       
+ "tBodyAccJerk-std()-Y"       
+ "tBodyAccJerk-std()-Z"        
+ "tBodyGyro-std()-X"           
+ "tBodyGyro-std()-Y"           
+ "tBodyGyro-std()-Z"           
+ "tBodyGyroJerk-std()-X"       
+ "tBodyGyroJerk-std()-Y"      
+ "tBodyGyroJerk-std()-Z"      
+ "tBodyAccMag-std()"           
+ "tGravityAccMag-std()"        
+ "tBodyAccJerkMag-std()"       
+ "tBodyGyroMag-std()"          
+ "tBodyGyroJerkMag-std()"      
+ "fBodyAcc-std()-X"           
+ "fBodyAcc-std()-Y"           
+ "fBodyAcc-std()-Z"            
+ "fBodyAccJerk-std()-X"        
+ "fBodyAccJerk-std()-Y"        
+ "fBodyAccJerk-std()-Z"        
+ "fBodyGyro-std()-X"           
+ "fBodyGyro-std()-Y"          
+ "fBodyGyro-std()-Z"           
+ "fBodyAccMag-std()"           
+ "fBodyBodyAccJerkMag-std()"   
+ "fBodyBodyGyroMag-std()"      
+ "fBodyBodyGyroJerkMag-std()" 
+ ```
+ 
+ 
+ 
